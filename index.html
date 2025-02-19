@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+
+    <style>
+
+        form {
+            border: 2px solid black;
+            padding: 20px;
+            width: 300px;
+            border-radius: 10px;
+            background-color: burlywood;
+            
+        }
+
+        .nome {
+            background-color: beige; 
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;   
+        }
+
+        .botão-negrito {
+            font-weight: bold; 
+            border-radius: 5px;
+        }
+        
+        .botão-negrito:hover {
+            background-color:grey ;
+        }
+       
+    </style>
+
+    <script>
+        function funcaosegura() {
+            let btnElm = document.getElementById("btnSubmit");
+            console.log("Botão identificado:", btnElm);
+        }
+
+        function minhaFuncaoChange() {
+            alert("O campo foi alterado!");
+        }
+            
+        function enviarFormulario(event) {
+            event.preventDefault();
+            console.log ("Enviado com sucesso!");
+            alert("Envido com sucesso!");
+        }
+    </script>
+
+</head>
+
+<body onload="funcaosegura()">
+
+    <main>
+
+        <div>
+
+            <form action="url">
+
+                <label for="Nome">Nome</label>
+                <input onchange="minhaFuncaoChange()" class="nome" id="Nome" type="text" name="nome">
+                <br><br>
+
+                <label for="Telefone">Telefone</label>
+                <input onchange="minhaFuncaoChange()" class="nome" id="Telefone" type="number" name="nome">
+                <br><br>
+
+                <label for="E-mail">E-mail</label>
+                <input onchange="minhaFuncaoChange()" class="nome" id="E-mail" type="email" name="nome">
+                <br><br>
+
+                <label for="Curso"> Curso </label>
+                <input onchange="minhaFuncaoChange()"  class="nome" id="Curso" type="text" name="nome">
+                <br><br>
+                
+                <label for="Ano">Ano de Conclusão</label>
+                <input onchange="minhaFuncaoChange()" class="nome"  id="Ano" type="number" name="nome">
+                <br><br>
+
+                <button id="btnSubmit" type="submit" onclick="enviarFormulario(event)" class="botão-negrito">Enviar</button>
+                    
+            </form>
+        </div>
+
+    </main>
+
+</body>
+</html>
